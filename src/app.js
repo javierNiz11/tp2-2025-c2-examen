@@ -1,7 +1,8 @@
 import express from "express";
 import morgan from "morgan";
 import userRoutes from "./routes/userRoute.js";
-import movieRoutes from "./routes/movieRouter.js";
+
+import salesRoutes from "./routes/salesRouter.js";
 import cors from "cors";
 
 const app = express();
@@ -13,7 +14,8 @@ app.use(cors());
 
 // Rutas
 app.use("/api/users", userRoutes);
-app.use("/api/movies", movieRoutes);
+
+app.use("/api/sales", salesRoutes);
 
 // Ruta base
 app.get("/", (req, res) => {

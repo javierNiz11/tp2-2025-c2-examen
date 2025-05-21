@@ -29,6 +29,15 @@ export function getDb() {
             "Debes conectar a la base de datos primero usando connectToDatabase()"
         );
     }
-
     return db;
+}
+
+// Nueva función para acceder a la base sample_supplies
+export function getDbSupplies() {
+    if(!client) {
+        throw new Error(
+            "Debes conectar a la base de datos primero usando connectToDatabase()"
+        );
+    }
+    return client.db("sample_supplies");
 }
