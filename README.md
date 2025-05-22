@@ -15,21 +15,21 @@ Luego de abrir el correo encuentras un mail de tu Líder Técnico con tu primera
 > 3. Instalar las dependencias
 > 4. Solicitar las variables de entorno que contiene la conexion string a mongodb (antes de preguntar, revisa el chat, seguro estan ahí)
 > 5. Ejecutar el servidor web de la api REST con el script de npm start-dev si queres trabajar con nodemon (tendrías que instalarlo) con start solo, tambien funciona.
->    El backend se conecta con una base de datos Mongodb en la cual se encuentra la base de datos **sample_mflix** con una collection llamada **movies**, ahí se encuentran aprox. 23.000 películas.
-> 6. Proba el endpoint que ya se encuentra desarrollado: /api/movies debería retornar un json con 23.000 películas. Sin embargo te aconsejo que uses el paginado que tiene para probar (mira la definición del end-point). Sí por algun motivo no llegase a funcionar, solicita asistencia.
+>    El backend se conecta con una base de datos Mongodb en la cual se encuentra la base de datos **sample_supplies** con una collection llamada **sales**, ahí se encuentran aprox. 5.000 ventas.
+> 6. Proba el endpoint que ya se encuentra desarrollado: /api/sales debería retornar un json con 5.000 ventas. Sin embargo te aconsejo que uses el paginado que tiene para probar (mira la definición del end-point). Sí por algun motivo no llegase a funcionar, solicita asistencia.
 
 > ### TUS TAREAS SON LAS SIGUIENTES POR ORDEN DE PRIORIDAD
 >
-> 1. Necesitamos un endpoint que nos devuelva una película (**movie**) particular por \_id
-> 2. Los desarrolladores de frontend estan haciendo un pantalla para mostrar solo las películas ganadoras de al menos un premio. Necesitamos que desarrolles el endpoint respectivo. Solo necesitan el titulo, el poster y el resumen de la reseña (**plot**)
-> 3. Necesitamos un endpoint que nos devuelva las peliculas filtradas por idioma. Toma en cuenta que estas películas pueden ser muchas y el desarrollador de frontend va mostrarlas paginadas.
-> 4. Hay un calificación propia de las peliculas denomidada [tomatoes](https://es.wikipedia.org/wiki/Rotten_Tomatoes) la base de datos de peliculas actual solo otorga el puntaje **fresh** en determinadas condiciones (no interesa en este caso). El equipo de frontend esta desarrollando un ranking basado en esta calificación. Te piden desarrollar un endpoint que devuelva las películas ordenadas de mayor a menor considerando el puntaje **fresh**
+> 1. Desarrollar el endpoint para obtener una venta particular por su id
+> 2. Desarrollar el endpoint para obtener todas las ventas con una nueva propiedad llamada **total** que sea el monto total de la venta (price * quantity) con el formato de endpoint /api/sales/total
+> 3. Desarrollar el endpoint para obtener las ventas filtradas por el mail del cliente. Queremos un listado de ventas de un cliente en particular utilizando el formato de endpoint /api/sales/customer/:email
+> 4. Desarrollar el endpoint para actualizar/cambiar el uso de cupon de descuento de la propiedad couponUsed
+> 5. Necesitamos un endpoint que devuelva un ranking/top N de productos mas vendidos utilizando el formato de endpoint /api/sales/top-products?limit=5 
 
-> ### SI TE DA EL TIEMPO DAME UN MANO TAMBIEN EN...
->
-> 5. En otra collection se encuentran los comentarios de usuarios de las peliculas **comments** y en otra collection los usuarios **users**. Mediante el \_id de usuario se requiere devolver un listado de objetos que contengan los comentarios de ese usuario juntamente con el titulo y el poster de la película.
 >
 > Desde ya muchas gracias por la colaboración! 😉 como te comente en la entrevista soy muy detallista en la prolijidad del codigo y la performance cada detalle cuenta, no me gusta mucho las cosas fuera del estandar de APIREST, sin embargo si no estas seguro, es mejor que lo resuelvas como puedas y me dejes notas en el readme.md del repo, para que yo pueda probar.
+
+> Y una ultima cosa importante, todos los endpoints que desarrolles tienen que estar asegurados con un middleware de autenticacion, que valide que el token sea valido y que el usuario tenga permiso para acceder a la ruta.
 
 ## Intrucciones para la entrega
 
