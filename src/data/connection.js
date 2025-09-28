@@ -13,7 +13,7 @@ export async function connectToDatabase(){
         try {
             client = new MongoClient(uri);
             await client.connect();
-            db = client.db("sample_mflix");
+            db = client.db("sample_airbnb");
             console.log("✅ Conexión a MongoDB establecida");
         } catch (error) {
             console.error("❌  Error conectando a MongoDB", error.message);
@@ -30,14 +30,4 @@ export function getDb() {
         );
     }
     return db;
-}
-
-// Nueva función para acceder a la base sample_supplies
-export function getDbSupplies() {
-    if(!client) {
-        throw new Error(
-            "Debes conectar a la base de datos primero usando connectToDatabase()"
-        );
-    }
-    return client.db("sample_supplies");
 }

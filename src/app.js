@@ -1,8 +1,8 @@
 import express from "express";
 import morgan from "morgan";
 import userRoutes from "./routes/userRoute.js";
+import listingsRoutes from "./routes/listingsRouter.js";
 
-import salesRoutes from "./routes/salesRouter.js";
 import cors from "cors";
 
 const app = express();
@@ -14,8 +14,7 @@ app.use(cors());
 
 // Rutas
 app.use("/api/users", userRoutes);
-
-app.use("/api/sales", salesRoutes);
+app.use("/api/listings", listingsRoutes);
 
 // Ruta base
 app.get("/", (req, res) => {
