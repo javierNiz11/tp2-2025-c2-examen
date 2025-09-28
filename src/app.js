@@ -19,7 +19,7 @@ app.use("/api/listings", listingsRoutes);
 // Ruta base
 app.get("/", (req, res) => {
     res.json({
-        message: "API TP2 - Examen 2025 C1"
+        message: "API TP2 - Examen 2025 C2"
     });
 });
 
