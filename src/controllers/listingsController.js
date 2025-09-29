@@ -11,3 +11,15 @@ export const getAllListings = async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 };
+
+export const getListingById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const listing = await getListingById(id);
+        res.json(listing);
+    } catch (error) {
+        console.log("Error fetching listing: ", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
