@@ -1,4 +1,4 @@
-import { getListings } from "../services/listingsService.js";
+import { getListings, getListingById } from "../services/listingsService.js";
 
 export const getAllListings = async (req, res) => {
     try {
@@ -12,9 +12,10 @@ export const getAllListings = async (req, res) => {
     }
 };
 
-export const getListingById = async (req, res) => {
+export const getListingId = async (req, res) => {
     try {
         const id = req.params.id;
+        console.log(id);
         const listing = await getListingById(id);
         res.json(listing);
     } catch (error) {

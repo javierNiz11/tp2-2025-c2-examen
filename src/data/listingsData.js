@@ -19,7 +19,7 @@ export async function findAllListings(page, pageSize) {
 
 export async function findListingById(id) {
     const db = getDb();
-    const listing = await db.collection("listingsAndReviews").findOne({ _id: new ObjectId(id) });
+    const listing = await db.collection("listingsAndReviews").findOne({ _id: id });
     console.log(listing);
     return listing;
 }
